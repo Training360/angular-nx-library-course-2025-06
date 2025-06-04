@@ -7,6 +7,7 @@ export interface ICountryCode {
   name: string;
 }
 
+// Pipe for generating urls.
 @Pipe({
   name: 'flagUrlPipe',
   standalone: true,

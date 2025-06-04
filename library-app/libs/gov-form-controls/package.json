@@ -1,5 +1,5 @@
 {
-  "name": "@gov/form-controls",
+  "name": "ngc-form-controls-library",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^19.2.0",
