@@ -15,9 +15,7 @@
         "outputPath": "dist/apps/library-app",
         "index": "apps/library-app/src/index.html",
         "main": "apps/library-app/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": [],
         "tsConfig": "apps/library-app/tsconfig.app.json",
         "assets": [
           {
