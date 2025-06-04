@@ -48,9 +48,13 @@ export class CountrySelectorComponent implements ControlValueAccessor {
 
   disabled = signal<boolean>(false);
 
-  private onChanged!: (v: string) => void;
+  private onChanged: (v: string) => void = (v: string) => {
+    console.log(v);
+  };
 
-  private onTouched!: () => void;
+  private onTouched: () => void = () => {
+    console.log('touched');
+  };
 
   selectCountry(code: string): void {
     if (this.disabled()) {

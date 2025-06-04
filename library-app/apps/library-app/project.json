@@ -24,7 +24,7 @@
           },
           {
             "glob": "**/*",
-            "input": "dist/libs/gov-form-controls/assets",
+            "input": "node_modules/ngc-form-controls-library/assets",
             "output": "assets"
           }
         ],

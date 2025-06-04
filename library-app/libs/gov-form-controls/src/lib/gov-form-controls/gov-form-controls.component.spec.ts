@@ -18,4 +18,10 @@ describe('GovFormControlsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('text should exist', () => {
+    fixture.detectChanges();
+    const paragraphElement = fixture.nativeElement.querySelector('p');
+    expect(paragraphElement.textContent).toContain('GovFormControls works!');
+  });
 });
