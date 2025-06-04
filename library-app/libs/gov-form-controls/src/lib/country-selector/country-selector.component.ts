@@ -52,6 +52,10 @@ export class CountrySelectorComponent implements ControlValueAccessor {
   private onTouched!: () => void;
 
   selectCountry(code: string): void {
+    if (this.disabled()) {
+      return;
+    }
+
     this.onTouched();
     this.selected.set(code);
     this.onChanged(code);

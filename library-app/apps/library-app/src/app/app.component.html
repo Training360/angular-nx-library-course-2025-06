@@ -28,18 +28,18 @@
   <div class="col-4"></div>
   <div class="col-4">
     <h2 class="mt-3">Give feedback</h2>
-    <form action="">
+    <form [formGroup]="formGroup" action="">
       <div class="form-group">
         <label for="">Cinema</label>
-        <input type="text" class="form-control">
+        <input formControlName="cinema" type="text" class="form-control">
       </div>
       <div class="form-group">
         <label for="">Movie</label>
-        <input type="text" class="form-control">
+        <input formControlName="movie" type="text" class="form-control">
       </div>
       <div class="form-group">
-        <label for="">Rating</label>
-        <lib-country-selector></lib-country-selector>
+        <label for="">Country</label>
+        <lib-country-selector formControlName="country"></lib-country-selector>
       </div>
 
       <button class="btn btn-primary mt-3" type="submit">
@@ -49,5 +49,5 @@
   </div>
 </div>
 
-
+{{ formGroup.value | json }}
 <router-outlet></router-outlet>
