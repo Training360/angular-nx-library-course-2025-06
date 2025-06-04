@@ -1,1 +1,11 @@
-<p>country-selector works!</p>
+<div>
+  @for (country of countries(); track $index) {
+  <button class="flex flex-col item-center rounded-md border p-2 relative" type="button">
+
+    <img [src]="country.code | flagUrlPipe" alt="">
+
+    <p class="text-xs text-gray-700 mt-1">{{ country.name }}</p>
+
+  </button>
+  }
+</div>

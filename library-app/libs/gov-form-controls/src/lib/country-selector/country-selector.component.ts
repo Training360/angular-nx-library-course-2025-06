@@ -1,5 +1,5 @@
-import { Component, input, signal } from '@angular/core';
-import { CommonModule, LowerCasePipe } from '@angular/common';
+import { Component, input, Pipe, PipeTransform, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export interface ICountryCode {
@@ -7,9 +7,23 @@ export interface ICountryCode {
   name: string;
 }
 
+@Pipe({
+  name: 'flagUrlPipe',
+  standalone: true,
+})
+class FlagUrlPipe implements PipeTransform {
+  transform(code: string): string {
+    if (typeof code !== 'string') {
+      return code;
+    }
+
+    return `assets/flag/${code.toLowerCase()}-flag.gif`;
+  }
+}
+
 @Component({
   selector: 'lib-country-selector',
-  imports: [CommonModule, LowerCasePipe],
+  imports: [CommonModule, FlagUrlPipe],
   templateUrl: './country-selector.component.html',
   styleUrl: './country-selector.component.css',
   providers: [
@@ -21,7 +35,7 @@ export interface ICountryCode {
   ],
 })
 export class CountrySelectorComponent implements ControlValueAccessor {
-  counties = input<ICountryCode[]>([
+  countries = input<ICountryCode[]>([
     { code: 'HU', name: 'HUN' },
     { code: 'US', name: 'USA' },
     { code: 'NL', name: 'NLD' },
