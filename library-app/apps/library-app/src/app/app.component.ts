@@ -4,6 +4,7 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 import {
   GovFormControlsComponent,
   RatingComponentComponent,
+  CountrySelectorComponent,
 } from '@gov/form-controls';
 
 @Component({
@@ -12,6 +13,7 @@ import {
     RouterModule,
     GovFormControlsComponent,
     RatingComponentComponent,
+    CountrySelectorComponent,
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
