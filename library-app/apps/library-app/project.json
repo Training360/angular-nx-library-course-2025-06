@@ -21,6 +21,11 @@
           {
             "glob": "**/*",
             "input": "apps/library-app/public"
+          },
+          {
+            "glob": "**/*",
+            "input": "dist/libs/gov-form-controls/assets",
+            "output": "assets"
           }
         ],
         "styles": [
